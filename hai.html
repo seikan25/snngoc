@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Chúc Mừng Sinh Nhật</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff8c00, #ff6347, #f0e68c);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            color: #ff6347;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(0); }
+        }
+
+        .message {
+            font-size: 1.6em;
+            color: #444;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+     
+        .cake {
+            width: 180px;
+            margin-top: 30px;
+            animation: bounce 1s ease-in-out infinite alternate;
+        }
+
+     
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+
+    
+        .footer {
+            margin-top: 40px;
+            font-size: 1.2em;
+            color: #777;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        .button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #ff6347;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            animation: flyUp 10s linear infinite;
+        }
+
+        @keyframes flyUp {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        .balloon img {
+            width: 50px;
+            height: 70px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Chúc Mừng Sinh Nhật!</h1>
+    <img src="ss.jpg"  alt="Bánh sinh nhật" class="cake">
+    <p class="message">Chúc bạn một năm tràn đầy niềm vui, hạnh phúc và những thành công mới!</p>
+    <button class="button" onclick="alert('Chúc bạn một sinh nhật vui vẻ!')">Nhấn để chúc mừng</button>
+    <div class="footer">
+        <p>Chúc mừng sinh nhật pé ngọc</p>
+    </div>
+</div>
+<div class="balloon" style="left: 10%; animation-duration: 12s; animation-delay: 0s;">
+    <img src="12.webp" alt="Bóng bay">
+</div>
+<div class="balloon" style="left: 10%; animation-duration: 12s; animation-delay: 0s;">
+    <img src="12.webp" alt="Bóng bay">
+</div>
+<div class="balloon" style="left: 10%; animation-duration: 12s; animation-delay: 0s;">
+    <img src="12.webp" alt="Bóng bay">
+</div>
+<div class="balloon" style="left: 10%; animation-duration: 12s; animation-delay: 0s;">
+    <img src="12.webp" alt="Bóng bay">
+</div>
+<div class="balloon" style="left: 10%; animation-duration: 12s; animation-delay: 0s;">
+    <img src="12.webp" alt="Bóng bay">
+</div>
+<script>
+    function createBalloon() {
+        const balloon = document.createElement('div');
+        balloon.classList.add('balloon');
+        balloon.style.left = Math.random() * 100 + '%';
+        balloon.style.animationDuration = Math.random() * 5 + 10 + 's'; 
+        balloon.style.animationDelay = Math.random() * 10 + 's';
+        const balloonImage = document.createElement('img');
+        balloonImage.src = '12.webp'; 
+        balloonImage.alt = 'Bóng bay';
+        balloon.appendChild(balloonImage);
+        document.body.appendChild(balloon);
+    }
+
+    setInterval(createBalloon, 1000);
+</script>
+</body>
+</html>
